@@ -29,12 +29,19 @@ class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-      children: [
-        Expanded(child: Container(color: Colors.red,)),
-        Text("Hola")
-      ],
-    
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+        children: [
+          Expanded(child: ListView.builder(
+            itemCount: 100,
+            itemBuilder: (context, index) {
+            return(Text("indice: $index"));
+          },)),
+          Text("Hola")
+        ],
+          
+        ),
       ),
     );
   }
