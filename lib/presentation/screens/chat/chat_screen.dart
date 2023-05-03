@@ -8,14 +8,33 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 239, 148, 148),
       appBar: AppBar(
-        leading:  const Padding(
-          padding: EdgeInsets.all(4.0),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage("https://pngimg.com/uploads/brad_pitt/brad_pitt_PNG17.png"),
+        elevation: 10.00,
+        shadowColor: Color.fromARGB(255, 70, 2, 2),
+        backgroundColor: Color.fromARGB(255, 237, 112, 112),
+        leading:   Padding(
+          padding: EdgeInsets.all(2.0),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(width: 2,color: Color.fromARGB(255, 125, 10, 2))
+            ),
+            child: CircleAvatar(
+              backgroundColor: Colors.black,
+              backgroundImage: NetworkImage("https://pngimg.com/uploads/brad_pitt/brad_pitt_PNG17.png"),
+            ),
           ),
         ),
-        title: const Text("My love ❤️"),
+        title: const Text(
+          "My love ❤️",
+          style: TextStyle(
+            color: Color.fromARGB(255, 97, 9, 4),
+          fontStyle: FontStyle.normal,
+          fontSize: 25,
+          fontWeight: FontWeight.w700
+
+          ),),
         centerTitle: false,
       ),
       body: const _ChatView(),
@@ -31,10 +50,14 @@ class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      
       child: Padding(
+      
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
+          
         children: [
+          
           Expanded(child: ListView.builder(
             itemCount: 100,
             itemBuilder: (context, index) {
