@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_yes_no_app/presentation/widgets/chat/her_message_bubble.dart';
+import 'package:flutter_yes_no_app/presentation/widgets/shared/message_field_box.dart';
 
 import '../../widgets/chat/my_mesagge_bubble.dart';
 
@@ -66,7 +67,7 @@ class _ChatView extends StatelessWidget {
             const HerMessageBubble()
             : const MyMessageBubble();
           },)),
-          const Text("Hola")
+          MessageFieldBox()
         ],
           
         ),
